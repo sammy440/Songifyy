@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "project": {
+    "name": "Songify",
+    "type": "frontend",
+    "framework": "nextjs",
+    "runtime": "node",
+    "language": "typescript"
+  },
+  "build": {
+    "command": "npm run build",
+    "outputDir": ".next",
+    "dockerfile": null
+  },
+  "start": {
+    "command": "npm start",
+    "port": 3000
+  },
+  "deploy": {
+    "provider": "vercel",
+    "region": "auto",
+    "strategy": "static",
+    "healthcheck": null
+  },
+  "env": {},
+  "resources": {
+    "cpu": "0.5",
+    "memory": "512MB"
+  },
+  "advanced": {
+    "autoDetect": true,
+    "allowAIOverrides": true
+  }
+}
