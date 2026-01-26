@@ -19,7 +19,6 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: 'Songify | Discover Your Music',
   description: 'A modern music discovery platform powered by Spotify',
-  generator: 'v0.app',
   icons: {
     icon: [
       {
