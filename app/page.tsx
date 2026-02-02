@@ -132,6 +132,14 @@ export default function Home() {
     searchInputRef.current?.focus();
   }, []);
 
+  const handleArtistClick = useCallback((id: string) => {
+    setSelectedArtistId(id);
+  }, []);
+
+  const handleTrackClick = useCallback((id: string) => {
+    setSelectedTrackId(id);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Header
@@ -161,6 +169,8 @@ export default function Home() {
             curatedTracks={curatedTracks}
             onCurate={handleCurate}
             onRemove={handleRemove}
+            onTrackClick={handleTrackClick}
+            onArtistClick={handleArtistClick}
             isLoading={isLoading}
             searchQuery={searchQuery}
           />
@@ -193,6 +203,16 @@ export default function Home() {
 
       {/* API Setup Banner */}
       <ApiSetupBanner show={showApiBanner && !apiConfigured} />
+
+      {/* Detail Modals */}
+      <ArtistDetailModal
+        artistId={selectedArtistId}
+        onClose={() => setSelectedArtistId(null)}
+      />
+      <TrackDetailModal
+        trackId={selectedTrackId}
+        onClose={() => setSelectedTrackId(null)}
+      />
     </div>
   );
 }
